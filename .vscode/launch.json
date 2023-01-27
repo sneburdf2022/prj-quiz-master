@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PrjQuizApplication<prj-quiz>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "org.senai.prjquiz.PrjQuizApplication",
+            "projectName": "prj-quiz",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
