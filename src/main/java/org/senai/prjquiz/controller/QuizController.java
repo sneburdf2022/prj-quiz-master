@@ -25,9 +25,9 @@ public class QuizController {
     QuizRepository qRepository;
 
     @PostMapping("/")
-    public @ResponseBody Integer addQuiz(@RequestBody Quiz objQuiz) {
+    public @ResponseBody Quiz addQuiz(@RequestBody Quiz objQuiz) {
         qRepository.save(objQuiz);
-        return objQuiz.getId();
+        return objQuiz;
     }
 
     @GetMapping("/")

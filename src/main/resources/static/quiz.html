@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de quiz</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
 </head>
 
 <body>
@@ -44,7 +45,26 @@
             display: block;
         }
     </style>
-
+    <div class="container">
+        <div class="bd-content ps-lg-2">
+            <div class="bd-example">
+                <form class="row g-3">
+                    <div class="col-auto">
+                        <label for="staticEmail2" class="visually-hidden">Email</label>
+                        <input type="text" readonly="" class="form-control-plaintext" id="staticEmail2"
+                            value="email@example.com">
+                    </div>
+                    <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Password</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h1>Quiz do SENAI</h1>
         <h2>
@@ -76,7 +96,8 @@
     <script>
         let placar = {
             acertos: 0,
-            erros: 0
+            erros: 0,
+            nome: ""
         }
         function verificarResposta(i) {
             if (quiz.ponto >= 0) return;
@@ -91,8 +112,8 @@
                 placar.erros += 1;
             }
         }
-        
-        
+
+
         let lsPergunta = [];
         let quizAtual = 0;
         let quiz = {};
@@ -108,24 +129,24 @@
         buscarQuiz();
 
         function iniciarQuiz(apiQuiz) {
-            
+
             lsPergunta = JSON.parse(apiQuiz);
             embaralharPerguntas();
             carregarQuiz(quizAtual);
         }
 
         function carregarQuiz(nPergunta) {
-                embaralharRespotas(nPergunta);
-                quiz = lsPergunta[nPergunta];
-                document.querySelector('h2').innerHTML = quiz.pergunta;
-                for (let i = 0; i < 4; i++) {
-                    document.querySelectorAll('h3')[i].style.backgroundColor = '#cccccc';
-                    document.querySelectorAll('h3')[i].innerHTML = quiz.respostas[i];
-                    let x = i;
-                    document.querySelectorAll('h3')[i].addEventListener(
-                        'click', () => { verificarResposta(x) });
-                }
+            embaralharRespotas(nPergunta);
+            quiz = lsPergunta[nPergunta];
+            document.querySelector('h2').innerHTML = quiz.pergunta;
+            for (let i = 0; i < 4; i++) {
+                document.querySelectorAll('h3')[i].style.backgroundColor = '#cccccc';
+                document.querySelectorAll('h3')[i].innerHTML = quiz.respostas[i];
+                let x = i;
+                document.querySelectorAll('h3')[i].addEventListener(
+                    'click', () => { verificarResposta(x) });
             }
+        }
 
         function next() {
             // console.log(quizAtual);

@@ -18,29 +18,27 @@ public class Quiz {
     public Integer getId() {
         return id;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getPergunta() {
         return pergunta;
     }
-
-    public void setPergunta(String pergunta) {
-        this.pergunta = pergunta;
-    }
-
     public String[] getRespostas() {
         return respostas;
     }
 
-    public void setRespostas(String[] respostas) {
-        this.respostas = respostas;
-    }
-
     public int getCorreta() {
         return correta;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }    
+
+    public void setPergunta(String pergunta) {
+        this.pergunta = pergunta;
+    }
+    
+    public void setRespostas(String[] respostas) {
+        this.respostas = respostas;
     }
 
     public void setCorreta(int correta) {

@@ -10,54 +10,45 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String Nome;
+    private Integer QtdAcertos;
+    private Integer QtdErros;
+    private Integer QtdQuestoes;
 
     public Integer getId() {
         return id;
+    }
+    public String getNome() {
+        return Nome;
+    }
+    public Integer getQtdAcertos() {
+        return QtdAcertos;
+    }
+    public Integer getQtdErros() {
+        return QtdErros;
+    }
+    public Integer getQtdQuestoes() {
+        return QtdQuestoes;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    private String Nome;
-    private Integer QtdAcertos;
-    private Integer QtdErros;
-
-    public String getNome() {
-        return Nome;
-    }
-
     public void setNome(String nome) {
         this.Nome = nome;
     }
-
-    public Integer getQtdAcertos() {
-        return QtdAcertos;
-    }
-
+    
     public void setQtdAcertos(Integer qtdAcertos) {
         this.QtdAcertos = qtdAcertos;
-    }
-
-    public Integer getQtdErros() {
-        return QtdErros;
     }
 
     public void setQtdErros(Integer qtdErros) {
         this.QtdErros = qtdErros;
     }
-
-    /**
-     * @param id
-     * @param nome
-     * @param qtdAcertos
-     * @param qtdErros
-     */
-    public Usuario(Integer id, String nome, Integer qtdAcertos, Integer qtdErros) {
-        this.id = id;
-        this.Nome = nome;
-        this.QtdAcertos = qtdAcertos;
-        this.QtdErros = qtdErros;
+    
+    public void setQtdQuestoes(Integer qtdQuestoes) {
+        QtdQuestoes = qtdQuestoes;
     }
 
 }
